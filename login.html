@@ -1,0 +1,55 @@
+
+<html>
+<head>
+  <script>
+  
+function loginValidation() {
+   
+var uname = document.myform.username.value;
+      
+var password = document.myform.password.value;
+        if(uname==null || uname=="") {
+          alert("Name cant be blank")
+          return false;  
+       } else if (password.length<8){
+          alert("Password Must be 8 letters")
+          return false;
+       }  
+       return true                 
+    }           
+ </script>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="style4.css">
+  
+  </head>
+  
+  
+<body>
+  <div class="wrapper">
+     
+      <h1>Login Page</h1>
+     
+      <form name="myform" action="my website.html" 	onsubmit="return loginValidation(this)">
+      
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Username" autofocus>
+    
+    
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Password">
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <form action="loginsuccess.html">
+      <button type="submit" class="btn">Login</button>
+      </form>
+      <div class="register-link">
+        <p>Dont have an account? <a href="register.html">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

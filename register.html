@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <style>
+        h1{         
+         text-shadow: 5px 5px 10px red;
+        }
+        .content{
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        margin-top: 30px;
+        margin-left: 800px;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        height: 450px;
+        width: 400px;
+        background: rgb(0,0,0,0.5);
+        border-radius: 20px;
+    }
+   </style>
+   </style>
+    <style>
+        body {
+            background-image: url(bg14.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script>
+function validateEmail(){
+      var email=document.myform.email.value;  
+            var atposition=email.indexOf("@");  
+            var dotposition=email.lastIndexOf(".");  
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+  }  
+    }  
+function validateForm() {
+      const radioButtons = document.getElementsByName('gender');
+      let checkedButton = false;
+
+      // Check if any radio button is checked
+      for (let i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+          checkedButton = true;
+          break;
+        }
+      }
+      // If no radio button is checked
+      if (!checkedButton) {
+        alert("Please select a gender.");
+        return false;
+      }
+      return true;
+}
+    </script>
+    <body>
+        <center>  
+        <div class="content">
+        <h1>Registration Form</h1>
+        First Name:<input type="'text" name="fname"><br>
+        Last Name: <input type="text" name="lname"><br>
+        <form action="loginsuccess.html"  onsubmit="return validateForm()">
+            Gender:<br>
+            <label>
+              <input type="radio" name="gender" value="male"> Male
+            </label><br>
+            <label>
+              <input type="radio" name="gender" value="female"> Female
+            </label><br>
+            <label>
+              <input type="radio" name="gender" value="other"> Other
+            </label><br></form>
+        Mobile Number: <input type="tel"  name="mobileno" id="per1" pattern="[0-9]{10}"><br>
+        <form name="myform" method="post" action="loginsuccess.html" onsubmit="return validateEmail();"> 
+        Email: <input type="text" name="email"><br>      
+        Address: <textarea name="address"  cols="35" row="45"></textarea><br>
+        Date of Birth :<input type="date" name="dob"><br>     
+        City: <select name="city">
+            <option value="Select">---Select---</option>
+            <option value="Ongole">Ongole</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Banglore">Banglore</option> 
+            <option value="Chennai">Chennai</option>
+        </select><br>
+        State: <select name="state">
+            <option value="Select">---Select---</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telengana">Telengana</option>
+            <option value="Karnataka">Karnataka</option> 
+            <option value="Tamil Nadu">Tamil Nadu</option>
+         </select><br>
+        Pin Code:<textarea name="pincode"  cols="5" row="2"></textarea><br>
+        <input type="submit" value="Register">
+        <a href="home1.html"><input type="button" value="Exit"></a>
+    </form>
+    </center>
+</div>
+    </body>
+</html>
